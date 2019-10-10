@@ -1,1 +1,1 @@
-# FinalBurger
+# MbI v govne!
