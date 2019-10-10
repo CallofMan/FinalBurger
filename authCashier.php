@@ -12,7 +12,7 @@
 
     $result = mysqli_fetch_assoc($auth);
         if ($result['login'] == $login && $result['password'] == $password){
-            //header('Location: allUsers.php');
+            header('Location: allUsers.php');
         }
 
     $getId = mysqli_query($link, "SELECT id_cashier FROM `cashiers` WHERE `login` = '$login' AND `password` = '$password'");
