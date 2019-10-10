@@ -41,8 +41,8 @@
 
     <form class='boxAdd' method='POST'> 
         <h1 style="color: white; font-size: 30pt;">Авторизация</h1>
-        <input type="text" placeholder='Введите логин' name='authLogin'>
-        <input type="password" placeholder='Введите пароль' name='authPass'>
+        <input type="text" placeholder='Введите логин' name='authLogin' required>
+        <input type="password" placeholder='Введите пароль' name='authPass' required>
         <button name='enter'>Войти</button>
     </form>
 
