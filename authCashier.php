@@ -12,13 +12,14 @@
 
     $result = mysqli_fetch_assoc($auth);
         if ($result['login'] == $login && $result['password'] == $password){
+            $getId = mysqli_query($link, "SELECT id_cashier FROM `cashiers` WHERE `login` = '$login' AND `password` = '$password'");
+            $res = mysqli_fetch_assoc($getId);
+
+            $_SESSION['id'] = $res['id_cashier'];
             header('Location: allUsers.php');
         }
 
-    $getId = mysqli_query($link, "SELECT id_cashier FROM `cashiers` WHERE `login` = '$login' AND `password` = '$password'");
-    $res = mysqli_fetch_assoc($getId);
-
-    $_SESSION['id'] = $res['id_cashier'];
+    
 
     }
 
