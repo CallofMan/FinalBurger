@@ -88,14 +88,13 @@
     <div class='allInputs'>
 
         <form class="addUser" method="POST">
-            <input type="text" placeholder='Имя' name='addBuyerName'>
-            <input type="text" placeholder='Фамилия' name='addBuyerSurname'>
+            <input type="text" placeholder='Имя' name='addBuyerName' required>
+            <input type="text" placeholder='Фамилия' name='addBuyerSurname' required>
             <button name="addBuyer">Добавить пользователя</button>
         </form>
         <form class='navButtons'method='POST'>
         <button name='mainPage'> Главная </button> <br>
         <button name='addPos'> Добавление заказа </button> <br> 
-        <button name='authCash'> Авторизация кассира </button> <br>
         </form>
 
     </div>

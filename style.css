@@ -9,7 +9,7 @@ body
     background: linear-gradient(42deg, #2FD867, #0BA73F, #08B384);
 }
 
-input, button, .buttonA
+input, button, .buttonA, #house
 {
     width: 80%;
     height: 10%;
@@ -43,11 +43,13 @@ input, button, .buttonA
         width: 480px;
         height: 40px;
     }
-button
+button, #house
 {
-    background-color: white;
+    background-color: #141332;
     font-weight: bold;
     cursor: pointer;
+    color: white;
+    font-family: arial;
 }
 
 input::placeholder
@@ -120,6 +122,10 @@ a, img
         justify-content: space-around;
         flex-direction: column;
         align-items: center;
+    }
+    #house
+    {
+        text-decoration: none;
     }
     .listFood {
         display: flex;
@@ -213,8 +219,10 @@ a, img
     background: linear-gradient(42deg, #D933C7, #AB2AD1, #7931D0);
 }
     .returnB {
-        background-color: white;
+        background-color: #141332;
         font-weight: bold;
+        cursor: pointer;
+        color: white;
         width: 80%;
         height: 40%;
         border: 0px solid black;

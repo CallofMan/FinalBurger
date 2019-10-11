@@ -33,14 +33,15 @@
     <div id="boxDelete">
 
         <form class="navigationPanel" method='POST'>
-            <input type="text" placeholder='Название' name='addName'>
-            <input type="text" placeholder='Цена' name='addPrice'>
-            <input type="text" placeholder='Категория' name='addCategory'>
-            <input type="text" placeholder='День скидки' name='dayDiscount'>
-            <input type="text" placeholder='Процент скидки' name='procentDiscount'>
+            <input type="text" placeholder='Название' name='addName' required>
+            <input type="text" placeholder='Цена' name='addPrice' required>
+            <input type="text" placeholder='Категория' name='addCategory' required>
+            <input type="text" placeholder='День скидки' name='dayDiscount' required>
+            <input type="text" placeholder='Процент скидки' name='procentDiscount' required>
             <button name="addFood" class='addFood'>Добавить позицию</button>
-            <button name="return">Главная</button>
+            <a href="index.php" id='house'>Главная</a>
         </form>
+        
 
         <div class='listFood'> 
 
