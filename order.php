@@ -124,7 +124,8 @@
         discountProcent.push("<?php echo $resultAllCategories['discount_summ'] ?>");
     <?php } ?>
     //
-
+    
+    var counterBasket = 0;
     // функция добавления в зависимости от выбранной категории
     function category(category)
     {
@@ -152,7 +153,6 @@
 
         var orders = document.querySelectorAll('.fieldInfoOrder');
         var positionBasket = document.getElementById('positionBasket');
-        var counterBasket = 0;
         var allSumm = 0;
         var allDiscount = 0;
         var allProcent = 0;
