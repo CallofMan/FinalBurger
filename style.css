@@ -496,6 +496,7 @@ a, img
     margin-bottom: 15px;
     border-radius: 5px;
     background-color: white;
+    cursor: pointer;
 }
 .basketPrice, .basketDiscountProcent, .basketSumm, .basketName, .basketDiscountSumm, #allSumm, #allProcent, #allDiscount, #resultsSumm
 {
