@@ -124,7 +124,13 @@
         discountProcent.push("<?php echo $resultAllCategories['discount_summ'] ?>");
     <?php } ?>
     //
-    
+    var allSumm = 0;
+    var allDiscount = 0;
+    var allProcent = 0;
+    var resultsSumm = 0;
+    var summ = 0;
+    var discount = 0;
+    var allSuperSumm = 0;
     var counterBasket = 0;
     // функция добавления в зависимости от выбранной категории
     function category(category)
@@ -153,13 +159,7 @@
 
         var orders = document.querySelectorAll('.fieldInfoOrder');
         var positionBasket = document.getElementById('positionBasket');
-        var allSumm = 0;
-        var allDiscount = 0;
-        var allProcent = 0;
-        var resultsSumm = 0;
-        var summ = 0;
-        var discount = 0;
-        var allSuperSumm = 0;
+        
 
         orders.forEach(function(dick) 
         {
@@ -193,7 +193,7 @@
                 results.innerHTML = "";
 
                 results.innerHTML += "<p id='allSumm'> Сумма: " + allSuperSumm + " ₽ </p> <hr>";
-                results.innerHTML += "<p id='allProcent'> Процент: " + allProcent.toFixed(2) + " </p> <hr>";
+                results.innerHTML += "<p id='allProcent'> Процент: " + allProcent.toFixed(2) + " % </p> <hr>";
                 results.innerHTML += "<p id='allDiscount'> Сумма %: " + allDiscount + " ₽ </p> <hr>";
                 results.innerHTML += "<p id='resultsSumm'> Итоговая сумма: " + allSumm + " ₽ </p>";
             })
