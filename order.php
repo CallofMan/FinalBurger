@@ -132,6 +132,7 @@
     var discount = 0;
     var allSuperSumm = 0;
     var counterBasket = 0;
+    var divBaskets;
     // функция добавления в зависимости от выбранной категории
     function category(category)
     {
@@ -196,13 +197,25 @@
                 results.innerHTML += "<p id='allProcent'> Процент: " + allProcent.toFixed(2) + " % </p> <hr>";
                 results.innerHTML += "<p id='allDiscount'> Сумма %: " + allDiscount + " ₽ </p> <hr>";
                 results.innerHTML += "<p id='resultsSumm'> Итоговая сумма: " + allSumm + " ₽ </p>";
-            })
 
-            
+                divBaskets = document.querySelectorAll('.divBasket');
+
+                divBaskets.forEach(function(temper)
+                {   
+                    temper.addEventListener('click', () => {
+                        console.log('ebat');
+                        var idDelete = temper.getAttribute('id');
+                        var deleteElement = document.getElementById(idDelete);
+                        deleteElement.remove();
+
+                    })
+                }) 
+            })
         })
+        
     }
     //
-    
+
     document.querySelector('select').addEventListener('change', function(event)
     {
         var content = (event.target.options[event.target.options.selectedIndex].text);
