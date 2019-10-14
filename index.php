@@ -69,16 +69,19 @@
         
         p.textContent = 'Введите код челика';
         
-        chek.addEventListener('click', function()
-        {
+        setInterval(function(){
             var chekCode = document.getElementById('chekCode');
-
+            
             if(chekCode.value == "")
             {
                 p.textContent = 'Введите код челика';
             }
-            else
-            {
+        },10)
+
+        chek.addEventListener('click', function()
+        {
+            chekCode = document.getElementById('chekCode');
+            
                 for(var i = 0; i <= dataBuyersCode.length; i++)
                 {
                     if(chekCode.value == dataBuyersCode[i])
@@ -86,10 +89,11 @@
                         p.textContent = dataFirstName[i] + ' ' + dataSurname[i];
                         break;
                     }
-                }
-            }
-
-            
+                    else 
+                    {
+                        p.textContent = 'Такого нет челика...';
+                    }
+                }      
         })
         
     </script>
