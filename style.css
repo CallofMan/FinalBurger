@@ -513,3 +513,8 @@ a, img
 {
     flex-grow: 3;
 }
+
+.basketPrice span, .basketDiscountProcent span
+{
+    margin-left: 5px;
+}
