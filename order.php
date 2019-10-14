@@ -133,6 +133,8 @@
     var allSuperSumm = 0;
     var counterBasket = 0;
     var divBaskets;
+    // var price;
+    // var discountProcent;
     // функция добавления в зависимости от выбранной категории
     function category(category)
     {
@@ -170,6 +172,7 @@
                 positionBasket.innerHTML += "<div class='divBasket' id='divBasket" + counterBasket + "'> </div>";
     
                 var divBasket = document.getElementById('divBasket' + counterBasket); 
+                var idDivBasket = divBasket.getAttribute('id');
                 var idTrue = document.querySelector('#' + id);
                 var name = idTrue.querySelector('.infoMenuName');
                 var price = idTrue.querySelector('.infoMenuPrice');
@@ -178,8 +181,8 @@
                 summ = parseInt(price.textContent) - discount;
 
                 divBasket.innerHTML += "<p class='basketName'> Название: " + name.textContent + " </p> <hr>";
-                divBasket.innerHTML += "<p class='basketPrice'> Цена: " + price.textContent + " </p> <hr>";
-                divBasket.innerHTML += "<p class='basketDiscountProcent'> Процент: " + discountProcent.textContent + " </p> <hr>";
+                divBasket.innerHTML += "<p class='basketPrice'> Цена: <span id='price" + idDivBasket + "'> " + price.textContent + "</span> </p> <hr>";
+                divBasket.innerHTML += "<p class='basketDiscountProcent'> Процент: <span id='discountProcent" + idDivBasket + "'> " + discountProcent.textContent + "</span> </p> <hr>";
                 divBasket.innerHTML += "<p class='basketDiscountSumm'> Сумма %: " + discount + " ₽ </p> <hr>";
                 divBasket.innerHTML += "<p class='basketSumm'> Сумма: " + summ + " ₽ </p> ";
 
@@ -203,11 +206,33 @@
                 divBaskets.forEach(function(temper)
                 {   
                     temper.addEventListener('click', () => {
-                        console.log('ebat');
                         var idDelete = temper.getAttribute('id');
                         var deleteElement = document.getElementById(idDelete);
-                        deleteElement.remove();
 
+                        var priceDelete = document.getElementById('price' + idDelete);
+                        var discountProcentDelete = document.getElementById('discountProcent' + idDelete);
+                        var discountDelete = parseInt(priceDelete.textContent) / 100 * parseInt(discountProcentDelete.textContent);
+                        var summDelete = parseInt(priceDelete.textContent) - discountDelete;
+                        
+
+                        allSuperSumm -= parseInt(priceDelete.textContent);
+                        allSumm -= parseInt(summDelete);
+                        allDiscount -= parseInt(discountDelete);
+                        allProcent = allDiscount * 100 / allSuperSumm;
+                        // if (isNaN(allProcent))
+                        // {
+                        //     allProcent = 0;
+                        // }
+                        allProcent = isNaN(allProcent) ? 0 : allProcent;
+                        resultsSumm -= allDiscount;
+                        results.innerHTML = "";
+
+                        results.innerHTML += "<p id='allSumm'> Сумма: " + allSuperSumm + " ₽ </p> <hr>";
+                        results.innerHTML += "<p id='allProcent'> Процент: " + allProcent.toFixed(2) + " % </p> <hr>";
+                        results.innerHTML += "<p id='allDiscount'> Сумма %: " + allDiscount + " ₽ </p> <hr>";
+                        results.innerHTML += "<p id='resultsSumm'> Итоговая сумма: " + allSumm + " ₽ </p>";
+
+                        deleteElement.remove();
                     })
                 }) 
             })
